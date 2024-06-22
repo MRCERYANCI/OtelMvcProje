@@ -1,0 +1,21 @@
+﻿@model OtelMvcProje.Models.Entity.TblKullaniciAdminMesaj1
+
+@{
+    ViewBag.Title = "MesajDetay";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+<br />
+<div class="form-group" style="margin:10px;">
+    @Html.Label("Gönderen")
+    <input type="text" value="@Html.DisplayFor(x=>x.Gonderen)" class="form-control" />
+    <br />
+    @Html.Label("Alıcı")
+    <input type="text" value="@Html.DisplayFor(x=>x.Alıcı)" class="form-control" />
+    <br />
+    @Html.Label("Konu")
+    <input type="text" value="@Html.DisplayFor(x=>x.Konu)" class="form-control" />
+    <br />
+    @Html.Label("Mesaj")
+<textarea rows="4" class="form-control">@Html.DisplayFor(x=>x.Mesaj)</textarea>
+</div>
+

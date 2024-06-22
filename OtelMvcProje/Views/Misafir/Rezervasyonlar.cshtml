@@ -1,0 +1,54 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblRezervasyon>
+@{
+    ViewBag.Title = "Rezervasyonlar";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+<div class="container-fluid">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Default/AnaSayfa">Ana Sayfa</a></li>
+        <li class="breadcrumb-item active">Rezervasyonlar</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">DataTables, aşağıdaki demo tablosunu oluşturmak için kullanılan üçüncü taraf bir eklentidir. DataTables hakkında daha fazla bilgi için lütfen resmi DataTables belgelerini ziyaret edin.<a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Ad Soyad</th>
+                            <th>Giriş Tarihi</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Kişi Sayısı</th>
+                            <th>Oda No</th>
+                            <th>Detaylar</th>
+                        </tr>
+                    </thead>
+                  
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TblMisafir.Ad @item.TblMisafir.Soyad</td>
+                                <td>@(((DateTime)item.GirisTarih).ToString("dd MMM yyyy"))</td>
+                                <td>@(((DateTime)item.CikisTarih).ToString("dd MMM yyyy"))</td>
+                                <td>@item.Kisi</td>
+                                <td>@item.TblOda.OdaNo</td>
+                                <td><a href="#" class="btn btn-primary">Detaylar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="~/Temalar/WebMisafirPanel/dist/assets/demo/datatables-demo.js"></script>
+

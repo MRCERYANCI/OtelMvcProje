@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+
+<div class="form-group" style="margin:10px;">
+    <h2>Yeni Mesaj Sayfası</h2>
+    <form method="post" class="form-group">
+        <label>Alıcı</label>
+        <input type="email" class="form-control" name="Alıcı" required/>
+        <br />
+
+        <label>Konu</label>
+        <input type="text" class="form-control" name="Konu" required/>
+        <br />
+
+        <label>Mesaj</label>
+        <textarea rows="6" name="Mesaj" class="form-control" required></textarea>
+        <br />
+
+        <button class="btn btn-primary">Gönder</button>
+    </form>
+</div>

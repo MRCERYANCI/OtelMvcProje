@@ -1,0 +1,31 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblTakim>
+
+<section class="team py-5" id="team">
+    <div class="container py-lg-4 py-sm-3">
+        <h3 class="title-big text-center mb-md-5 mb-4">Our Team</h3>
+        <div class="row inner-sec-w3layouts-w3pvt-lauinfo">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-6 mt-md-0 mt-4">
+                    <div class="team-grids text-center">
+                        <img src="@item.Image" class="img-fluid" alt="">
+                        <div class="team-info">
+                            <div class="caption">
+                                <h4>@item.AdSoyad </h4>
+                                <h6>@item.Unvan</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-icons-section text-center">
+                        <a class="fac" href="@item.FacebookUrl">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="twitter" href="@item.TwitterUrl">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

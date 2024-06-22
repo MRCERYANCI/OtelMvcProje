@@ -1,0 +1,52 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblKullaniciAdminMesaj1>
+
+@{
+    ViewBag.Title = "GidenMesajlar";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+<div class="container-fluid">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/Default/AnaSayfa">Ana Sayfa</a></li>
+        <li class="breadcrumb-item active">Mesajlarım</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">DataTables, aşağıdaki demo tablosunu oluşturmak için kullanılan üçüncü taraf bir eklentidir. DataTables hakkında daha fazla bilgi için lütfen resmi DataTables belgelerini ziyaret edin.<a target="_blank" href="https://datatables.net/">official DataTables documentation</a>.</div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Alıcı</th>
+                            <th>Konu</th>
+                            <th>Tarih</th>
+                            <th>Mesajı Aç</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Alıcı</td>
+                                <td>@item.Konu</td>
+                                <td>@(((DateTime)item.Tarih).ToString("dd MMMM yyyy"))</td>
+                                <td><a href="/Misafir/MesajDetay?MesajId=@item.ID" class="btn btn-primary">Mesaj Detay</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="~/Temalar/WebMisafirPanel/dist/assets/demo/datatables-demo.js"></script>
+

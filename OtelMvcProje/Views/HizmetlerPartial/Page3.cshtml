@@ -1,0 +1,28 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblTesisler>
+<section class="w3l-stats">
+    <div class="main-w3 py-5">
+        <div class="container py-lg-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 title">
+                    <h3 class="title-big">Otelimizin Tesisleri</h3>
+                    <img src="~/Temalar/hotels-starter/assets/images/facilities.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 main-cont-wthree-fea text-center">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-6 pr-2 mt-4">
+                                <div class="grids-speci1">
+                                    <span class="@item.Icon"></span>
+                                    <h3 class="title-spe">@item.Baslik1</h3>
+                                    <p> @item.Baslik2</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

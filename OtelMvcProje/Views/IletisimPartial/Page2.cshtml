@@ -1,0 +1,55 @@
+﻿@model OtelMvcProje.Models.Entity.TblIletisim
+<section class="w3l-contact-1 py-5">
+    <div class="contacts-9 py-lg-5 py-sm-4">
+        <div class="container">
+            <div class="d-grid contact-view">
+                <div class="cont-details">
+                    <p>Bize ulaşmak çok kolay</p>
+                    <h3 class="title-big">Iletişim Bilgilerimiz</h3>
+                </div>
+                <div class="map-content-9">
+                    <p>
+                        @Html.DisplayFor(x => x.Aciklama)
+                    </p>
+                </div>
+            </div>
+            <div class="map-iframe my-5">
+                <iframe src="@Html.DisplayFor(x => x.Kordinat)"
+                        width="100%" height="300" frameborder="0" style="border: 0px; pointer-events: none;"
+                        allowfullscreen=""></iframe>
+            </div>
+            <div class="d-grid contact-view">
+                <div class="cont-details">
+                    <div class="cont-top">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-phone text-primary"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>Telefon</h6>
+                            <p><a href="tel:+44 99 555 42">+90 @Html.DisplayFor(x=>x.Telefon)</a></p>
+                        </div>
+                    </div>
+                    <div class="cont-top margin-up">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-envelope-o text-primary"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>Mail Adresi</h6>
+                            <p><a href="mailto:@Html.DisplayFor(x=>x.Mail)" class="mail">@Html.DisplayFor(x => x.Mail)</a></p>
+                        </div>
+                    </div>
+                    <div class="cont-top margin-up">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-map-marker text-primary"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>Adres</h6>
+                            <p>@Html.DisplayFor(x => x.Adres)</p>
+                        </div>
+                    </div>
+                </div>
+                @Html.Action("Page3", "IletisimPartial")
+            </div>
+        </div>
+    </div>
+</section>

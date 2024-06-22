@@ -1,0 +1,35 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblHizmetler>
+
+<section class="w3-about-2" id="features">
+    <div class="w3-services-ab py-5">
+        <div class="container py-lg-4 py-md-3">
+            <div class="title-section">
+
+                <div class="title-line">
+                </div>
+            </div>
+            <div class="row w3-services-grids">
+                <div class="col-lg-9 w3-services-right-grid pl-lg-5 mx-auto">
+                    <h4 class="mb-md-5 mb-4">Doğru hizmeti doğru zamanda sizlere sunuyoruz</h4>
+                    <div class="fea-gd-vv row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-6 mt-4 pt-md-2">
+                                <div class="float-rt feature-gd">
+                                    <div class="icon"> <span class="@item.Icon" aria-hidden="true"></span></div>
+                                    <div class="icon-info">
+                                        <h5>@item.Baslik</h5>
+                                        <p>
+                                          @item.Aciklama 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

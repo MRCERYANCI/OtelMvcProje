@@ -1,0 +1,39 @@
+﻿@model List<OtelMvcProje.Models.Entity.TblHizmetler1>
+<section class="w3l-servicesblock1" id="service">
+    <div class="features-with-17_sur py-5">
+        <div class="container py-lg-5 py-sm-4">
+            <div class="features-with-17-top_sur">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 align-self">
+                        <h3 class="title-small">Çokkeçeci Oteller Zinciri</h3>
+                        <p>
+                            Bütün odalarımızda mini buz dolabı, televizyon, wifi, sıcak su, duş, dolap,
+                            balkon ve klima gibi bileşenlerin tamamı bulunmaktadır. 7/24 Resepsiyon telefonunu
+                            arayabilirsiniz.
+
+                        </p>
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+                            <div class="features-with-17-right-tp_sur">
+                                <div class="features-with-17-left1">
+                                    <span class="@item.Icon" aria-hidden="true"></span>
+                                </div>
+                                <div class="features-with-17-left2">
+                                    <h5>@item.Baslik1</h5>
+                                    <h6><a href="#url">@item.Baslik2</a> </h6>
+                                    <p>
+                                        @item.Aciklama
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Çokkeçeci Otel - Login</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" href="~/Icon/favicon (2).ico" type="image/x-icon">
+    <meta name="keywords" content="Particles Login Form Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/Temalar/Otel-Login/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Amiri:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="w3ls-pos">
+        <h1>Otel Misafir Giriş Paneli</h1>
+        @if (ViewBag.Durum == "true")
+        {
+            <h2 style="color:#fff;">Rezervasyon Yapabilmek için Giriş Yapmanız Gerekmektedir!</h2>
+        }
+        <div class="w3ls-login box">
+            <form action="#" method="post">
+                <div class="agile-field-txt">
+                    <input type="email" name="Mail" placeholder="info@example.com" required="" />
+                </div>
+                <div class="agile-field-txt">
+                    <input type="password" name="Sifre" placeholder="******" required="" id="myInput" />
+                    <div class="agile_label">
+                        <input id="check3" name="check3" type="checkbox" value="show password">
+                        <label class="check" for="check3">Beni Hatırla</label>
+                    </div>
+                </div>
+                <div class="w3ls-bot">
+                    <input type="submit" value="Giriş Yap">
+                </div>
+            </form>
+        </div>
+
+        <div class="copy-wthree">
+            <p>
+                © @DateTime.Now.Year Hotels. Tüm Hakları Saklıdır | Designed by <a href="https://w3layouts.com">ÇOKKEÇECİ YAZILIM</a>
+            </p>
+        </div>
+    </div>
+
+    <script src='~/Temalar/Otel-Login/js/particles.min.js'></script>
+    <script src="~/Temalar/Otel-Login/js/index.js"></script>
+</body>
+</html>

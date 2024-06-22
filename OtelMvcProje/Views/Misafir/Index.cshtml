@@ -1,0 +1,34 @@
+﻿@model OtelMvcProje.Models.Entity.TblUye
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MisafirLayout.cshtml";
+}
+
+<br />
+<div class="form-group" style="margin:10px;">
+    @using (Html.BeginForm("UpdateProfile", "Misafir", FormMethod.Post))
+    {
+        <form method="post">
+            <input type="hidden" value="@Html.DisplayFor(x=>x.ID)" name="ID" />
+
+            @Html.Label("Ad Soyad")
+            <input name="AdSoyad" type="text" class="form-control" value="@Html.DisplayFor(x=>x.AdSoyad)" />
+            <br />
+
+            @Html.Label("Mail")
+            <input name="Mail" type="email" class="form-control" value="@Html.DisplayFor(x=>x.Mail)" />
+            <br />
+
+            @Html.Label("Telefon")
+            <input name="Telefon" type="text" class="form-control" value="@Html.DisplayFor(x=>x.Telefon)" />
+            <br />
+
+            @Html.Label("Şifre")
+            <input name="Sifre" type="password" class="form-control" value="@Html.DisplayFor(x=>x.Sifre)" />
+            <br />
+
+            <button class="btn btn-warning" style="color:#fff;">Güncelle</button>
+        </form>
+    }
+</div>
